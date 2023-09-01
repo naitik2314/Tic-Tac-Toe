@@ -8,6 +8,7 @@ screen = Screen()
 screen.setup(1000, 1000)
 screen.bgcolor("black")
 screen.title("Tic Tac Toe")
+screen.listen()
 screen.tracer(0)
 
 #Taking number of games inputs
@@ -30,6 +31,8 @@ tic = Tic()
 
 #Updating the screen
 screen.update()
+
+#Adding screen listen functionality
 
 game_is_on = True
 while game_is_on:
