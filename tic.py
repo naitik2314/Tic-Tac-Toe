@@ -37,3 +37,7 @@ class Tic(Turtle):
         self.goto(-300, -150)
         self.pendown()
         self.forward(600)
+
+    #Function to get the coordinates and send it to responsible function
+    def print_position(self,x, y):
+        print(f"{x}, {y}")

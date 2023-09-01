@@ -3,6 +3,9 @@ from player import Player
 from score import Score
 from tic import Tic
 
+def print_position(x, y):
+    tic.print_position(x, y)
+
 #Screen setup
 screen = Screen()
 screen.setup(1000, 1000)
@@ -33,6 +36,7 @@ tic = Tic()
 screen.update()
 
 #Adding screen listen functionality
+screen.onscreenclick(print_position)
 
 game_is_on = True
 while game_is_on:
