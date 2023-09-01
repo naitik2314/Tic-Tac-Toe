@@ -255,6 +255,3 @@ class Tic(Turtle):
         
         elif x > 150 and y < -150:
             self.bottom_right_box()
-
-    
-    #Now addind the main brains
