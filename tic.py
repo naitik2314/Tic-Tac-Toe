@@ -8,6 +8,7 @@ class Tic(Turtle):
         self.boxes = ["nil"]
         self.moves = 0
         self.it_has_been_skipped = False
+        self.board = [[' ' for _ in range(3)] for _ in range(3)]
         self.horizontal_line_1()
         self.horizontal_line_2()
         self.vertical_line_1()
@@ -272,3 +273,6 @@ class Tic(Turtle):
         
         elif x > 150 and y < -150:
             self.bottom_right_box()
+
+    
+    #Now addind the main brains
