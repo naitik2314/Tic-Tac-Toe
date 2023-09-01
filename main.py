@@ -41,6 +41,7 @@ screen.onscreenclick(send_coordinates)
 game_is_on = True
 while game_is_on:
     screen.update()
+    tic.it_has_been_skipped = False
     if score1.score > number_of_games or score2.score > number_of_games:
         game_is_on = False
 
