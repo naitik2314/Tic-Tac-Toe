@@ -5,7 +5,8 @@ class Tic(Turtle):
         super().__init__()
         self.hideturtle()
         self.color("white")
-        self.start = "player1"
+        self.boxes = ["nil"]
+        self.moves = 0
         self.horizontal_line_1()
         self.horizontal_line_2()
         self.vertical_line_1()
@@ -41,7 +42,20 @@ class Tic(Turtle):
 
     #Functions to print x and 0
     def middle_box(self):
-        print("Got into the middle box")
+        self.penup()
+        for positions_filled in self.boxes:
+            if positions_filled == "middle_box":
+                self.goto(0, 400)
+                self.pendown()
+                self.write("Box not empty, try another one", align="center", font=('Times New Roman', 12))
+            else:
+                self.moves += 1
+                self.goto(0, -75)
+                self.pendown()
+                if self.moves % 2 != 0:
+                    self.write("X", align="center", font=("Arial", 100))
+                else:
+                    self.write("O", align="center", font=("Arial", 100))
     
     def left_to_middle_box(self):
         print("Got into left_to_middle")
