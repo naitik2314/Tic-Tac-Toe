@@ -64,11 +64,9 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("middle_box")
                 self.write("X", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
             else:
                 self.boxes.append("middle_box")
                 self.write("O", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
     
     def left_to_middle_box(self):
         self.penup()
@@ -85,11 +83,9 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("left_to_middle")
                 self.write("X", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
             else:
                 self.boxes.append("left_to_middle")
                 self.write("O", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
 
     def top_left_box(self):
         self.penup()
@@ -106,12 +102,10 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("top_left")
                 self.write("X", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
                 
             else:
                 self.boxes.append("top_left")
                 self.write("O", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
 
     def bottom_left_box(self):
         self.penup()
@@ -128,12 +122,10 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("bottom_left")
                 self.write("X", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
                 
             else:
                 self.boxes.append("bottom_left")
                 self.write("O", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
 
     def top_to_middle(self):
         self.penup()
@@ -150,12 +142,10 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("top_to_middle")
                 self.write("X", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
                 
             else:
                 self.boxes.append("top_to_middle")
                 self.write("O", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
 
     def bottom_to_middle(self):
         self.penup()
@@ -172,12 +162,10 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("bottom_to_middle")
                 self.write("X", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
                 
             else:
                 self.boxes.append("bottom_to_middle")
                 self.write("O", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
 
     def right_to_middle(self):
         self.penup()
@@ -194,12 +182,10 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("right_to_middle")
                 self.write("X", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
                 
             else:
                 self.boxes.append("right_to_middle")
                 self.write("O", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
 
     def top_right_box(self):
         self.penup()
@@ -216,12 +202,10 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("top_right_box")
                 self.write("X", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
                 
             else:
                 self.boxes.append("top_right_box")
                 self.write("O", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
     
     def bottom_right_box(self):
         self.penup()
@@ -238,12 +222,10 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("bottom_right_box")
                 self.write("X", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
                 
             else:
                 self.boxes.append("bottom_right_box")
                 self.write("O", align="center", font=("Arial", 100))
-                self.it_has_been_skipped = False
 
     #Function to get the coordinates and send it to responsible function
     def get_coordinates(self,x, y):
