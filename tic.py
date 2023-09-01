@@ -5,6 +5,7 @@ class Tic(Turtle):
         super().__init__()
         self.hideturtle()
         self.color("white")
+        self.start = "player1"
         self.horizontal_line_1()
         self.horizontal_line_2()
         self.vertical_line_1()
@@ -38,6 +39,17 @@ class Tic(Turtle):
         self.pendown()
         self.forward(600)
 
+    #Functions to print x and 0
+    def middle_box(self):
+        print("Got into the middle box")
+    
+    def left_to_middle_box(self):
+        print("Got into left_to_middle")
+
     #Function to get the coordinates and send it to responsible function
-    def print_position(self,x, y):
-        print(f"{x}, {y}")
+    def get_coordinates(self,x, y):
+        if x < 150 and x > -150 and y < 150 and y > -150:
+            self.middle_box()
+
+        elif x < -150 and y > -150 and y < 150:
+            self.left_to_middle_box()
