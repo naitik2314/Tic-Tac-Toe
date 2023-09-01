@@ -46,6 +46,27 @@ class Tic(Turtle):
     def left_to_middle_box(self):
         print("Got into left_to_middle")
 
+    def top_left_box(self):
+        print("Got to top left box")
+
+    def bottom_left_box(self):
+        print("Got to bottom left box")
+
+    def top_to_middle(self):
+        print("Got to top to middle box")
+
+    def bottom_to_middle(self):
+        print("Bottom to middle box")
+
+    def right_to_middle(self):
+        print("Right to middle box")
+
+    def top_right_box(self):
+        print("Top right box")
+    
+    def bottom_right_box(self):
+        print("Bottom right box")
+
     #Function to get the coordinates and send it to responsible function
     def get_coordinates(self,x, y):
         if x < 150 and x > -150 and y < 150 and y > -150:
@@ -53,3 +74,24 @@ class Tic(Turtle):
 
         elif x < -150 and y > -150 and y < 150:
             self.left_to_middle_box()
+
+        elif x < -150 and y > 150:
+            self.top_left_box()
+
+        elif x < -150 and y < -150:
+            self.bottom_left_box()
+
+        elif x < 150 and x > -150 and y > 150:
+            self.top_to_middle()
+
+        elif x < 150 and x > -150 and y < -150:
+            self.bottom_to_middle()
+
+        elif x > -150 and y > -150 and y < 150:
+            self.right_to_middle()
+
+        elif x > 150 and y > 150:
+            self.top_right_box()
+        
+        elif x > 150 and y < -150:
+            self.bottom_right_box()
