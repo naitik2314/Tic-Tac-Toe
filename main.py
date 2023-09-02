@@ -2,6 +2,7 @@ from turtle import Screen
 from player import Player
 from score import Score
 from tic import Tic
+import time
 
 def send_coordinates(x, y):
     tic.get_coordinates(x, y)
@@ -47,9 +48,13 @@ while game_is_on:
     #We check for the winner
     tic.check_winner()
 
-    #If we have a winner, we stop the game
+    #If we have a winner, we check if the intended score is reached, if not, then we reset
     if tic.winner == True:
-        game_is_on = False
+        if score1.score > number_of_games or score2.score > number_of_games:
+            game_is_on = False
+        else:
+            time.sleep(2)
+            tic.tic_reset()
 
     #If the board is full, we declare a tie
     if tic.moves == 9:
@@ -58,9 +63,5 @@ while game_is_on:
 
     #We reset the it has been skipped variable
     tic.it_has_been_skipped = False
-
-    #We check if the score user inputted is reached
-    if score1.score > number_of_games or score2.score > number_of_games:
-        game_is_on = False
 
 screen.exitonclick()

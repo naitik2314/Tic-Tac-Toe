@@ -17,6 +17,22 @@ class Tic(Turtle):
         self.horizontal_line_2()
         self.vertical_line_1()
         self.vertical_line_2()
+    
+    def tic_reset(self):
+        self.clear()
+        self.color("white")
+        self.boxes = ["nil"]
+        self.moves = 0
+        self.it_has_been_skipped = False
+        self.board = [[' ' for _ in range(3)] for _ in range(3)]
+        self.row = []
+        self.col = []
+        self.diagonal = []
+        self.winner = False
+        self.horizontal_line_1()
+        self.horizontal_line_2()
+        self.vertical_line_1()
+        self.vertical_line_2()
 
     def horizontal_line_1(self):
         self.penup()
