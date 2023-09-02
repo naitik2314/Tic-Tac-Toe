@@ -66,10 +66,28 @@ class Tic(Turtle):
                 self.row = []
                 self.winner = True
                 break
+            elif self.row[0] == 'O' and self.row[1] == 'O' and self.row[2] == 'O':
+                print('O won')
+                self.row = []
+                self.winner = True
+                break
             self.row = []
 
         #Check column, the basic idea is to increment the row number
-
+        for i in range(3):
+            for j in range(3):
+                self.col.append(self.board[j][i])
+            if self.col[0] == 'X' and self.col[1] == 'X' and self.col[2] == 'X':
+                print('X won')
+                self.col = []
+                self.winner = True
+                break
+            elif self.col[0] == 'O' and self.col[1] == 'O' and self.col[2] == 'O':
+                print('O won')
+                self.col = []
+                self.winner = True
+                break
+            self.col = []
 
         #Check diagonal
 
