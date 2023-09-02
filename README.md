@@ -10,7 +10,6 @@ A simple implementation of the classic Tic Tac Toe game using Python and Object-
 - [Getting Started](#getting-started)
 - [How to Play](#how-to-play)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Description
 
