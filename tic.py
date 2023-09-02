@@ -9,6 +9,9 @@ class Tic(Turtle):
         self.moves = 0
         self.it_has_been_skipped = False
         self.board = [[' ' for _ in range(3)] for _ in range(3)]
+        self.row = []
+        self.col = []
+        self.winner = False
         self.horizontal_line_1()
         self.horizontal_line_2()
         self.vertical_line_1()
@@ -51,6 +54,25 @@ class Tic(Turtle):
     #Function to print the board
     def print_board(self):
         print(self.board)
+
+    #Function to check if there is a winner
+    def check_winner(self):
+        #Check row, the basic idea is to increment the column
+        for i in range(3):
+            for j in range(3):
+                self.row.append(self.board[i][j])
+            if self.row[0] == 'X' and self.row[1] == 'X' and self.row[2] == 'X':
+                print('X won')
+                self.row = []
+                self.winner = True
+                break
+            self.row = []
+
+        #Check column, the basic idea is to increment the row number
+
+
+        #Check diagonal
+
 
     #Functions to print x and 0
     def middle_box(self):

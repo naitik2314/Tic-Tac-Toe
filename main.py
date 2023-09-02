@@ -37,10 +37,29 @@ screen.update()
 
 #Adding screen listen functionality
 screen.onscreenclick(send_coordinates)
+
 game_is_on = True
+
 while game_is_on:
+    #As the screen tracer is 0, we are updating the screen here
     screen.update()
+
+    #We check for the winner
+    tic.check_winner()
+
+    #If we have a winner, we stop the game
+    if tic.winner == True:
+        game_is_on = False
+
+    #If the board is full, we declare a tie
+    if tic.moves == 9:
+        print("It is a tie!")
+        game_is_on = False
+
+    #We reset the it has been skipped variable
     tic.it_has_been_skipped = False
+
+    #We check if the score user inputted is reached
     if score1.score > number_of_games or score2.score > number_of_games:
         game_is_on = False
 
