@@ -11,6 +11,7 @@ class Tic(Turtle):
         self.board = [[' ' for _ in range(3)] for _ in range(3)]
         self.row = []
         self.col = []
+        self.diagonal = []
         self.winner = False
         self.horizontal_line_1()
         self.horizontal_line_2()
@@ -90,6 +91,31 @@ class Tic(Turtle):
             self.col = []
 
         #Check diagonal
+        #Checking the top left to bottom right matrix
+        for i in range(3):
+            self.diagonal.append(self.board[i][i])
+        if self.diagonal[0] == 'X' and self.diagonal[1] == 'X' and self.diagonal[2] == 'X':
+            print('X won')
+            self.winner = True
+            self.diagonal = []
+        elif self.diagonal[0] == 'O' and self.diagonal[1] == 'O' and self.diagonal[2] == 'O':
+            print('O won')
+            self.winner = True
+            self.diagonal = []
+        self.diagonal = []
+
+        #Checking the top right to bototm left matrix
+        for i in range(3):
+            self.diagonal.append(self.board[i][2 - i])
+        if self.diagonal[0] == 'X' and self.diagonal[1] == 'X' and self.diagonal[2] == 'X':
+            print('X won')
+            self.winner = True
+            self.diagonal = []
+        elif self.diagonal[0] == 'O' and self.diagonal[1] == 'O' and self.diagonal[2] == 'O':
+            print('O won')
+            self.winner = True
+            self.diagonal = []
+        self.diagonal = []
 
 
     #Functions to print x and 0
