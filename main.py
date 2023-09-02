@@ -4,6 +4,8 @@ from score import Score
 from tic import Tic
 import time
 
+from tie import Tie
+
 def send_coordinates(x, y):
     tic.get_coordinates(x, y)
 
@@ -27,11 +29,12 @@ player1 = Player(player1_name, (-450, 400))
 player2 = Player(player2_name, (-450, 350))
 
 #Initialize the Scoreboard
-score1 = Score(number_of_games, (-300, 400))
-score2 = Score(number_of_games, (-300, 350))
+score1 = Score(number_of_games, (-300, 400), player1_name)
+score2 = Score(number_of_games, (-300, 350), player2_name)
 
 #Intialize the board
 tic = Tic()
+tie = Tie()
 
 #Updating the screen
 screen.update()
@@ -50,7 +53,15 @@ while game_is_on:
 
     #If we have a winner, we check if the intended score is reached, if not, then we reset
     if tic.winner == True:
-        if score1.score > number_of_games or score2.score > number_of_games:
+        if tic.winner_player == 'X':
+            score1.increase_score()
+        elif tic.winner_player == 'O':
+            score2.increase_score()
+        if score1.score >= number_of_games or score2.score >= number_of_games:
+            if score1.score >= number_of_games:
+                score1.winner_declaration()
+            else:
+                score2.winner_declaration()
             game_is_on = False
         else:
             time.sleep(2)
@@ -58,8 +69,9 @@ while game_is_on:
 
     #If the board is full, we declare a tie
     if tic.moves == 9:
-        print("It is a tie!")
-        game_is_on = False
+        tie.tie_display()
+        time.sleep(2)
+        tic.tic_reset
 
     #We reset the it has been skipped variable
     tic.it_has_been_skipped = False

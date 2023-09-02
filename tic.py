@@ -13,6 +13,7 @@ class Tic(Turtle):
         self.col = []
         self.diagonal = []
         self.winner = False
+        self.winner_player = ''
         self.horizontal_line_1()
         self.horizontal_line_2()
         self.vertical_line_1()
@@ -79,12 +80,12 @@ class Tic(Turtle):
             for j in range(3):
                 self.row.append(self.board[i][j])
             if self.row[0] == 'X' and self.row[1] == 'X' and self.row[2] == 'X':
-                print('X won')
+                self.winner_player = 'X'
                 self.row = []
                 self.winner = True
                 break
             elif self.row[0] == 'O' and self.row[1] == 'O' and self.row[2] == 'O':
-                print('O won')
+                self.winner_player = 'O'
                 self.row = []
                 self.winner = True
                 break
@@ -95,12 +96,12 @@ class Tic(Turtle):
             for j in range(3):
                 self.col.append(self.board[j][i])
             if self.col[0] == 'X' and self.col[1] == 'X' and self.col[2] == 'X':
-                print('X won')
+                self.winner_player = 'X'
                 self.col = []
                 self.winner = True
                 break
             elif self.col[0] == 'O' and self.col[1] == 'O' and self.col[2] == 'O':
-                print('O won')
+                self.winner_player = 'O'
                 self.col = []
                 self.winner = True
                 break
@@ -111,11 +112,11 @@ class Tic(Turtle):
         for i in range(3):
             self.diagonal.append(self.board[i][i])
         if self.diagonal[0] == 'X' and self.diagonal[1] == 'X' and self.diagonal[2] == 'X':
-            print('X won')
+            self.winner_player = 'X'
             self.winner = True
             self.diagonal = []
         elif self.diagonal[0] == 'O' and self.diagonal[1] == 'O' and self.diagonal[2] == 'O':
-            print('O won')
+            self.winner_player = 'O'
             self.winner = True
             self.diagonal = []
         self.diagonal = []
@@ -124,11 +125,11 @@ class Tic(Turtle):
         for i in range(3):
             self.diagonal.append(self.board[i][2 - i])
         if self.diagonal[0] == 'X' and self.diagonal[1] == 'X' and self.diagonal[2] == 'X':
-            print('X won')
+            self.winner_player = 'X'
             self.winner = True
             self.diagonal = []
         elif self.diagonal[0] == 'O' and self.diagonal[1] == 'O' and self.diagonal[2] == 'O':
-            print('O won')
+            self.winner_player = 'O'
             self.winner = True
             self.diagonal = []
         self.diagonal = []
