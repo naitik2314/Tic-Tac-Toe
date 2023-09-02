@@ -48,6 +48,10 @@ class Tic(Turtle):
         self.goto(0, 400)
         self.write("Box not empty, try another one", align="center", font=('Times New Roman', 12))
 
+    #Function to print the board
+    def print_board(self):
+        print(self.board)
+
     #Functions to print x and 0
     def middle_box(self):
         self.penup()
@@ -64,9 +68,11 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("middle_box")
                 self.write("X", align="center", font=("Arial", 100))
+                self.board[1][1] = 'X'
             else:
                 self.boxes.append("middle_box")
                 self.write("O", align="center", font=("Arial", 100))
+                self.board[1][1] = 'O'
     
     def left_to_middle_box(self):
         self.penup()
@@ -83,9 +89,11 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("left_to_middle")
                 self.write("X", align="center", font=("Arial", 100))
+                self.board[1][0] = 'X'
             else:
                 self.boxes.append("left_to_middle")
                 self.write("O", align="center", font=("Arial", 100))
+                self.board[1][0] = 'O'
 
     def top_left_box(self):
         self.penup()
@@ -102,10 +110,11 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("top_left")
                 self.write("X", align="center", font=("Arial", 100))
-                
+                self.board[0][0] = 'X'
             else:
                 self.boxes.append("top_left")
                 self.write("O", align="center", font=("Arial", 100))
+                self.board[0][0] = 'O'
 
     def bottom_left_box(self):
         self.penup()
@@ -122,10 +131,11 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("bottom_left")
                 self.write("X", align="center", font=("Arial", 100))
-                
+                self.board[2][0] = 'X'
             else:
                 self.boxes.append("bottom_left")
                 self.write("O", align="center", font=("Arial", 100))
+                self.board[2][0] = 'O'
 
     def top_to_middle(self):
         self.penup()
@@ -142,10 +152,11 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("top_to_middle")
                 self.write("X", align="center", font=("Arial", 100))
-                
+                self.board[0][1] = 'X'
             else:
                 self.boxes.append("top_to_middle")
                 self.write("O", align="center", font=("Arial", 100))
+                self.board[0][1] = 'O'
 
     def bottom_to_middle(self):
         self.penup()
@@ -162,10 +173,11 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("bottom_to_middle")
                 self.write("X", align="center", font=("Arial", 100))
-                
+                self.board[2][1] = 'X'
             else:
                 self.boxes.append("bottom_to_middle")
                 self.write("O", align="center", font=("Arial", 100))
+                self.board[2][1] = 'O'
 
     def right_to_middle(self):
         self.penup()
@@ -182,10 +194,11 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("right_to_middle")
                 self.write("X", align="center", font=("Arial", 100))
-                
+                self.board[1][2] = 'X'
             else:
                 self.boxes.append("right_to_middle")
                 self.write("O", align="center", font=("Arial", 100))
+                self.board[1][2] = 'O'
 
     def top_right_box(self):
         self.penup()
@@ -202,10 +215,11 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("top_right_box")
                 self.write("X", align="center", font=("Arial", 100))
-                
+                self.board[0][2] = 'X'
             else:
                 self.boxes.append("top_right_box")
                 self.write("O", align="center", font=("Arial", 100))
+                self.board[0][2] = 'O'
     
     def bottom_right_box(self):
         self.penup()
@@ -222,10 +236,11 @@ class Tic(Turtle):
             if self.moves % 2 != 0:
                 self.boxes.append("bottom_right_box")
                 self.write("X", align="center", font=("Arial", 100))
-                
+                self.board[2][2] = 'X'
             else:
                 self.boxes.append("bottom_right_box")
                 self.write("O", align="center", font=("Arial", 100))
+                self.board[2][2] = 'O'
 
     #Function to get the coordinates and send it to responsible function
     def get_coordinates(self,x, y):

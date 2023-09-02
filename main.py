@@ -37,7 +37,6 @@ screen.update()
 
 #Adding screen listen functionality
 screen.onscreenclick(send_coordinates)
-
 game_is_on = True
 while game_is_on:
     screen.update()
